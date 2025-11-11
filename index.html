@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Typing Speed Test ⚡</h1>
+            <p class="subtitle">Test your typing speed and accuracy!</p>
+
+            <!-- Theme toggle -->
+            <div class="theme-toggle-wrap" style="text-align:center; margin-bottom:12px;">
+                <button id="theme-toggle" aria-pressed="false" title="Toggle dark mode">🌙</button>
+            </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label>Difficulty:</label>
+                <div class="btn-group">
+                    <button class="setting-btn active" data-difficulty="easy">Easy</button>
+                    <button class="setting-btn" data-difficulty="medium">Medium</button>
+                    <button class="setting-btn" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+            <div class="setting-group">
+                <label>Time:</label>
+                <div class="btn-group">
+                    <button class="setting-btn" data-time="15">15s</button>
+                    <button class="setting-btn" data-time="30">30s</button>
+                    <button class="setting-btn active" data-time="60">60s</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-label">WPM</div>
+                <div class="stat-value" id="wpm">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Accuracy</div>
+                <div class="stat-value" id="accuracy">100%</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Time</div>
+                <div class="stat-value" id="timer">60s</div>
+            </div>
+        </div>
+
+        <div class="text-display" id="text-display"></div>
+
+        <input type="text" id="input-field" placeholder="Click Start and type here..." disabled>
+
+        <div class="buttons">
+            <button class="start-btn" id="start-btn">Start Test</button>
+            <button class="reset-btn" id="reset-btn">Reset</button>
+        </div>
+    </div>
+
+    <div class="modal" id="result-modal">
+        <div class="modal-content">
+            <h2>🎉 Test Complete! 🎉</h2>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <span>Words Per Minute:</span>
+                    <strong id="final-wpm">0</strong>
+                </div>
+                <div class="modal-stat">
+                    <span>Accuracy:</span>
+                    <strong id="final-accuracy">0%</strong>
+                </div>
+                <div class="modal-stat">
+                    <span>Correct Characters:</span>
+                    <strong id="final-correct">0</strong>
+                </div>
+                <div class="modal-stat">
+                    <span>Incorrect Characters:</span>
+                    <strong id="final-incorrect">0</strong>
+                </div>
+            </div>
+            <button class="start-btn" onclick="closeModal()">Try Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
